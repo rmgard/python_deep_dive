@@ -1,0 +1,25 @@
+
+''' my_var points to object A. If my_var goes away...
+    we point my_var to "none", then the ref count 
+    goes from 1 to 0.
+    Let's suppose Object A has an instance variable
+    that points to another object, "Object B".
+    At this point if we get rid of my_var, then 
+    the ref count of Object A goes to 0,
+    but the ref count of object B is still 1.
+    Once var_1 is destroyed, then object B's ref count
+    also is destroyed.
+
+    If Object B also has an instance variable called
+    var_2, and var_2 points back to object A creatoing
+    a circular ref. If my_var is gotten rid of , the ref
+    count of object A goes from 2 to 1, and ref count of
+    object B is 1.
+    
+    So having object A and object B in a circular ref cannot
+    be cleaned up by python mem manager, and we create a memory
+    leak.
+
+    The garbage collector can be controlled programmatically using 
+    the "gc" module.
+    '''
