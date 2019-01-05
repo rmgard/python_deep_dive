@@ -1,0 +1,19 @@
+def my_func(a, b):
+	# code here
+
+In the above code, we create the function 'my_func()'
+a and b are the parameters of the defined function.
+
+Later when we call the function:
+
+x = 10
+y - 'a'
+my_func(x, y)
+
+x and y are the arguments of the function.
+
+NOTE: a and b are variables inside the function.
+When we pass in x and y, the memory address is given to the function.
+This means a and b will also point to the memory address 
+from the function's scope. Whereas x and y point to 
+the same memory addresses from the module's scope.
